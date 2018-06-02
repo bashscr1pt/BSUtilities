@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.DisplayMode;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
+import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,16 @@ public class BSSystemUtils
 {
 	public static Dimension getPrimaryMonitorScreenSize()
 	{
-		return Toolkit.getDefaultToolkit().getScreenSize();
+		Rectangle widow_size = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
+		return new Dimension(widow_size.width, widow_size.height);
+	}
+	
+	public static Dimension getTaskbarSize()
+	{
+		Dimension screen_size = Toolkit.getDefaultToolkit().getScreenSize();
+		Dimension window_size = getPrimaryMonitorScreenSize();
+		int task_bar_height = screen_size.height - window_size.height;
+		return new Dimension(window_size.width, task_bar_height);
 	}
 	public static List<Dimension> getScreenSize()
 	{
