@@ -1,4 +1,4 @@
-package co.bashscript.datastructure;
+package co.bashscript.datastructure.lazymap;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

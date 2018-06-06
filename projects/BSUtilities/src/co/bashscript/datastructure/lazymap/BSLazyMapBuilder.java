@@ -1,4 +1,4 @@
-package co.bashscript.datastructure;
+package co.bashscript.datastructure.lazymap;
 
 public interface BSLazyMapBuilder<T, R>
 {
